@@ -6,24 +6,92 @@
     <description>Recent content on Tius&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 10:55:54 +0800</lastBuildDate><atom:link href="http://sztone.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 16:04:30 +0800</lastBuildDate><atom:link href="http://sztone.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
-      <link>http://sztone.github.io/post/first/</link>
-      <pubDate>Mon, 08 May 2023 10:55:54 +0800</pubDate>
+      <title>PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)</title>
+      <link>http://sztone.github.io/post/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open/</link>
+      <pubDate>Mon, 19 Jul 2021 16:04:30 +0800</pubDate>
       
-      <guid>http://sztone.github.io/post/first/</guid>
-      <description>sdfgsdf</description>
+      <guid>http://sztone.github.io/post/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open/</guid>
+      <description>概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
+ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
+chown -R www:www fastcgi_temp/ </description>
     </item>
     
     <item>
-      <title>Go Excel导出工具封装</title>
-      <link>http://sztone.github.io/post/go-excel%E5%AF%BC%E5%87%BA%E5%B7%A5%E5%85%B7%E5%B0%81%E8%A3%85/</link>
-      <pubDate>Mon, 08 May 2023 10:55:54 +0800</pubDate>
+      <title>Windows10 docker安装PHP环境swoole扩展</title>
+      <link>http://sztone.github.io/post/windows10_docker%E5%AE%89%E8%A3%85php%E7%8E%AF%E5%A2%83swoole%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 07 Jul 2021 11:02:32 +0800</pubDate>
       
-      <guid>http://sztone.github.io/post/go-excel%E5%AF%BC%E5%87%BA%E5%B7%A5%E5%85%B7%E5%B0%81%E8%A3%85/</guid>
-      <description>License excelize 用起来比较复杂，需要通过指定excel的sheet坐标来定位单元格进行读取或者插入数据,但是功能更强大。这个仓库现在还有人维护，我之前提了 &amp;hellip;
-for (var i = 0; i &amp;lt; 10; i++) { if (i == 0) { i++ } } </description>
+      <guid>http://sztone.github.io/post/windows10_docker%E5%AE%89%E8%A3%85php%E7%8E%AF%E5%A2%83swoole%E6%89%A9%E5%B1%95/</guid>
+      <description>概述 本教程安装版本 php7.4 swoole4.6.4 步骤： 1.安装php镜像 2.创建php容器 3.安装gcc g++编译环境 4.安装swoole扩展 5.配置php.ini 6.重启容器
+docker 安装PHP # 首先docker下载php7.4的镜像 docker pull php:7.4 创建容器 # 创建php7.4的容器 docker run -it --name TiusPHP7.4 php:7.4 bash # 进入容器后，可以php-v查看当前版本 php -v #PHP 7.4.21 (cli) (built: Jul 1 2021 19:23:47) ( NTS ) #Copyright (c) The PHP Group #Zend Engine v3.4.0, Copyright (c) Zend Technologies # 查看是否已安装swoole扩展 php -m #[PHP Modules] # ... 扩展列表 #[Zend Modules] 安装Swoole扩展 进入容器后，查看对应版本及扩展后，我们可以看到并没有安装swoole 现在安装swoole的扩展</description>
+    </item>
+    
+    <item>
+      <title>PHP SPL数据结构SplFixedArray与Array对比</title>
+      <link>http://sztone.github.io/post/php_spl%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84splfixedarray%E4%B8%8Earray%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Fri, 25 Jun 2021 12:01:15 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/post/php_spl%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84splfixedarray%E4%B8%8Earray%E5%AF%B9%E6%AF%94/</guid>
+      <description>SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
+SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
+使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &amp;lt; 2000000; $i++) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &amp;lt; 2000000; $i++) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &amp;#34;&amp;lt;hr/&amp;gt;&amp;#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&amp;#39;普通数组， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66.</description>
+    </item>
+    
+    <item>
+      <title>Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法</title>
+      <link>http://sztone.github.io/post/thinkphp5.1%E5%A4%8D%E7%94%A8db%E7%B1%BB%E5%AF%BC%E8%87%B4sql_where%E6%9D%A1%E4%BB%B6%E5%8F%8Avalue%E5%80%BC%E6%B7%B7%E6%B7%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Tue, 01 Jun 2021 14:59:50 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/post/thinkphp5.1%E5%A4%8D%E7%94%A8db%E7%B1%BB%E5%AF%BC%E8%87%B4sql_where%E6%9D%A1%E4%BB%B6%E5%8F%8Avalue%E5%80%BC%E6%B7%B7%E6%B7%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_tag&amp;quot;);,于是我在构造 __construct 内赋值给了变量db； 在我执行更新时，我会先去调用isRepeat()判断内容是否重复，于是就出现了下面的问题，
+问题 更新时，where条件多出name=&amp;quot;xxxx&amp;quot;;
+public $db; public function __construct() { $this-&amp;gt;db = Db::name(&amp;#39;manage_tag&amp;#39;); } public function editTag(int $id,String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;id&amp;#39;, $id)-&amp;gt;fetChSql()-&amp;gt;update([&amp;#39;name&amp;#39; =&amp;gt; $name]); var_dump($result); return $result ? true : false; } public function isRepeat(String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;name&amp;#39;,$name)-&amp;gt;find(); return $result ? true : false; } 使用fetChSql()方法查看打印sql
+UPDATE `yh_manage_tag` `name` = &amp;#39;标签11321&amp;#39; , `update_time` = 1621046891 WHERE `name` = &amp;#39;标签11321&amp;#39; AND `id` = 1 解决 查阅Thinkphp5.</description>
+    </item>
+    
+    <item>
+      <title>Nginx-Mysql 502 recv() failed 104: Connection reset by peer</title>
+      <link>http://sztone.github.io/post/nginx_mysql_connection_reset_by_peer/</link>
+      <pubDate>Tue, 01 Jun 2021 13:49:09 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/post/nginx_mysql_connection_reset_by_peer/</guid>
+      <description>概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Nginx日志， 发现Nginx 和 php-fpm通讯出现了问题
+recv() failed (104: Connection reset by peer) while reading response header from upstream 出现这种错误，通常都是php-fpm没能正常响应Nginx 导致php-fpm这种情况，要么程序执行超时，要么就是服务器进程内存泄露, 程序上，我也是测了又测的，程序执行时间都在配置的php.ini,php-fpm.conf的超时时间内，不存在那么久的超时，
+解决 修改php-fpm配置文件 我这里是直接用pm.max_requests = 500来处理 意思是，当一个 PHP-CGI 进程处理的请求数累积到 500 个后，自动重启该进程。
+如果pm.max_requests没有设置重启参数，默认为0不限制最大服务次数，也就是子进程永远不重启，长时间不重启子进程会导致系统负载异常，处理时间变长等现象。
+pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 pm.max_spare_servers = 35 pm.max_requests = 500 有时候由于 php-fpm 有好多闲置的进程一直不释放， 导致内存占用过大，FastCGI 进程一旦加载就不会释放，当其工作完成后，就休眠于 FastCGI 系统池中，等待下一次被唤醒。甚至是php-fpm假死，也会出现502的错误，只能重启php-fpm才能解决这个问题。
+注： Nginx报错upstream timed out (110: Connection timed out) 就是由于pm.</description>
+    </item>
+    
+    <item>
+      <title>PHP Yaf(Yet Another Framework) 扩展及框架部署</title>
+      <link>http://sztone.github.io/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 10 Apr 2021 13:25:13 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</guid>
+      <description>查看本机配置 终端输入命令php -v
+$ php -v PHP 7.4.3 (cli) (built: Feb 18 2020 17:29:57) ( NTS Visual C++ 2017 x64 ) Copyright (c) The PHP Group Zend Engine v3.4.0, Copyright (c) Zend Technologies 本机环境：windows10 PHPstudy PHP7.4.3 NTS + Nginx1.15
+先附上链接地址懒得找 yaf 扩展下载地址：https://pecl.php.net/package/yaf
+yaf github项目地址 : https://github.com/laruence/yaf
+yaf 框架文档：https://www.laruence.com/manual/
+yaf 扩展文档:https://www.php.net/manual/zh/book.yaf.php
+下载yaf 要使用yaf首先要开启PHP的yaf扩展官网下载
+一，选择对应版本，楼主用的PHP7.4所以下载的最新版本3.3.2 二，通过phpinfo()选择NTS 还是TS的版本，以及X86或者X64 三，disable线程非安全选择： 加载yaf扩展 将下载完的yaf扩展解压，把里面的 php_yaf.dll 移到对应的php版本的ext目录下
+如： D:\phpstudy_pro\Extensions\php\php7.4.3nts\ext
+修改php.ini 在对应PHP版本的php.ini 加入yaf扩展，保存并重启服务器
+extension=php_yaf.dll 检查模块是否加载成功 终端输入命令php -m，看到yaf说明就已经配置成功
+$ php -m [PHP Modules] .</description>
+    </item>
+    
+    <item>
+      <title>Jquery 根据 字符串首字符（string）生成Base64头像</title>
+      <link>http://sztone.github.io/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</link>
+      <pubDate>Wed, 10 Apr 2019 13:21:46 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</guid>
+      <description>function getImage(name){ if($.trim(name) == &amp;#39;&amp;#39;){ name = &amp;#39;默认&amp;#39; } name = name.toUpperCase(); //设置初始值,防止name为空时程序无法执行 var nick = &amp;#34;未知&amp;#34;; //判断name是否为空 if(name){ nick = name.charAt(0); }else{ name = &amp;#39;默认&amp;#39;; } var fontSize = 14; var fontWeight = &amp;#39;normal&amp;#39;; var canvas = document.getElementById(&amp;#39;canvas&amp;#39;); if(canvas){ canvas.remove(); }else{ var html = &amp;#34;&amp;lt;canvas id=&amp;#39;canvas&amp;#39; style=&amp;#39;display:none&amp;#39;&amp;gt;&amp;lt;/canvas&amp;gt;&amp;#34;; $(&amp;#34;body&amp;#34;).append(html); canvas = document.getElementById(&amp;#39;canvas&amp;#39;); } var context = canvas.getContext(&amp;#39;2d&amp;#39;); //头像背景颜色设置 context.fillStyle = &amp;#39;#2D89EF&amp;#39;; context.fillRect(0, 0, canvas.width, canvas.height); canvas.width = 28; canvas.height = 28; //头像字体颜色设置 context.</description>
     </item>
     
   </channel>

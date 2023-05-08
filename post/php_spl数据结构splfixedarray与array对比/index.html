@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Tius" />
-  <meta property="og:url" content="http://sztone.github.io/tags/" />
-  <link rel="canonical" href="http://sztone.github.io/tags/" /><link rel="alternate" type="application/atom+xml" href="http://sztone.github.io/index.xml" title="Tius&#39;s Blog">
+  <meta property="og:url" content="http://sztone.github.io/post/php_spl%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84splfixedarray%E4%B8%8Earray%E5%AF%B9%E6%AF%94/" />
+  <link rel="canonical" href="http://sztone.github.io/post/php_spl%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84splfixedarray%E4%B8%8Earray%E5%AF%B9%E6%AF%94/" /><link rel="alternate" type="application/atom+xml" href="http://sztone.github.io/index.xml" title="Tius&#39;s Blog">
 
   <script type="application/ld+json">
   {
@@ -18,28 +18,32 @@
            "@type": "WebPage",
            "@id": "http:\/\/sztone.github.io\/"
       },
-      "articleSection" : "tags",
-      "name" : "Tags",
-      "headline" : "Tags",
-      "description" : "",
+      "articleSection" : "post",
+      "name" : "PHP SPL数据结构SplFixedArray与Array对比",
+      "headline" : "PHP SPL数据结构SplFixedArray与Array对比",
+      "description" : "SplFixedArray 官方介绍：https:\/\/www.php.net\/manual\/zh\/class.splfixedarray.php\nSplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言\n使用示例： \/\/ 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i \u0026lt; 2000000; $i\u002b\u002b) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(\u0026#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($e-$s) \/ 1024 \/ 1024, $et - $st); \/\/ SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \\SplFixedArray(2000000); for ($i = 0; $i \u0026lt; 2000000; $i\u002b\u002b) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(\u0026#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($e-$s) \/ 1024 \/ 1024, $et - $st); echo \u0026#34;\u0026lt;hr\/\u0026gt;\u0026#34;; \/\/ 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(\u0026#39;普通数组， 遍历200万条数据耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(\u0026#39;SplFixedArray， 遍历200万条数据耗时%f\u0026lt;br\/\u0026gt;\u0026#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66.",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
       "publisher": "Tius",
       "accountablePerson" : "Tius",
       "copyrightHolder" : "Tius",
-      "copyrightYear" : "0001",
-      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
-      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "http:\/\/sztone.github.io\/tags\/",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-06-25 12:01:15 \u002b0800 CST",
+      "dateModified" : "2021-06-25 12:01:15 \u002b0800 CST",
+      "url" : "http:\/\/sztone.github.io\/post\/php_spl%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84splfixedarray%E4%B8%8Earray%E5%AF%B9%E6%AF%94\/",
       "keywords" : [  ]
   }
 </script>
-<title>Tags</title>
-  <meta property="og:title" content="Tags" />
+<title>PHP SPL数据结构SplFixedArray与Array对比</title>
+  <meta property="og:title" content="PHP SPL数据结构SplFixedArray与Array对比" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="" />
-  <meta name="description" content="" />
+  <meta property="og:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
+SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
+使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &amp;#34;&amp;lt;hr/&amp;gt;&amp;#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&amp;#39;普通数组， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66." />
+  <meta name="description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
+SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
+使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &amp;#34;&amp;lt;hr/&amp;gt;&amp;#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&amp;#39;普通数组， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66." />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
   
 
@@ -61,18 +65,21 @@
   
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="PHP SPL数据结构SplFixedArray与Array对比"/>
+<meta name="twitter:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
+SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
+使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &#34;&lt;hr/&gt;&#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&#39;普通数组， 遍历200万条数据耗时%f&lt;br/&gt;&#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&#39;SplFixedArray， 遍历200万条数据耗时%f&lt;br/&gt;&#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66."/>
 
   
 </head>
 
 
 <body>
-  <article class="posts">
+  <article class="post " id="article">
     <div class="row">
       <div class="col-xs-12">
-        
+        <div class="site-header">
+          
 <header>
   <div class="header-title">
     <a href="/"
@@ -97,11 +104,104 @@
 </div>
 <div class="header-line"></div>
 
-
-        <h1 class="taxonomy-term"></h1>
-        <div id="posts-list">
-          
         </div>
+        <header class="post-header">
+          <h1 class="post-title">PHP SPL数据结构SplFixedArray与Array对比</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-06-25 12:01:15 CST">
+                25 Jun 2021
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://tius.cn/">@Tius</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h3 id="splfixedarray">SplFixedArray</h3>
+<p><a href="https://www.php.net/manual/zh/class.splfixedarray.php">官方介绍</a>：https://www.php.net/manual/zh/class.splfixedarray.php</p>
+<p><code>SplFixedArray</code>提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度
+好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言</p>
+<h3 id="使用示例">使用示例：</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>		<span style="color:#75715e">// 普通数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		$s <span style="color:#f92672">=</span> <span style="color:#a6e22e">memory_get_usage</span>(); $st <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		$array <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2000000</span>; $i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			$array[] <span style="color:#f92672">=</span> $i;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		$e <span style="color:#f92672">=</span> <span style="color:#a6e22e">memory_get_usage</span>(); $et <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;</span>, ($e<span style="color:#f92672">-</span>$s) <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span>, $et <span style="color:#f92672">-</span> $st);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// SplFixedArray
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		$s <span style="color:#f92672">=</span> <span style="color:#a6e22e">memory_get_usage</span>(); $st <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		$fixedArray <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\SplFixedArray</span>(<span style="color:#ae81ff">2000000</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2000000</span>; $i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			$fixedArray[$i] <span style="color:#f92672">=</span> $i;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		$e <span style="color:#f92672">=</span> <span style="color:#a6e22e">memory_get_usage</span>(); $et <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;</span>, ($e<span style="color:#f92672">-</span>$s) <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">1024</span>, $et <span style="color:#f92672">-</span> $st);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;hr/&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		$st <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">foreach</span> ($array <span style="color:#66d9ef">as</span> $v) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		$et <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;普通数组， 遍历200万条数据耗时%f&lt;br/&gt;&#39;</span>, ($et<span style="color:#f92672">-</span>$st));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		$st <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">foreach</span> ($fixedArray <span style="color:#66d9ef">as</span> $v) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		$et <span style="color:#f92672">=</span> <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#39;SplFixedArray， 遍历200万条数据耗时%f&lt;br/&gt;&#39;</span>,($et<span style="color:#f92672">-</span>$st));
+</span></span></code></pre></div><h3 id="输出结果">输出结果</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>普通数组， 存储200万条数据占用66.000076MB内存, 耗时0.054365
+</span></span><span style="display:flex;"><span>SplFixedArray， 存储200万条数据占用32.000130MB内存, 耗时0.039488
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>普通数组， 遍历200万条数据耗时0.020308
+</span></span><span style="display:flex;"><span>SplFixedArray， 遍历200万条数据耗时0.031104
+</span></span></code></pre></div><p>FixedArray写入时内存占用比普通数据小了一大半，数据越大越明显。
+FixedArray写入速度相对于普通数组也快一些，但读取略比普通数组慢些</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              <br/><br/><p>Author：<a target='_blank' href='https://tius.cn'>Tius's Blog</a></p>
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
 
         <div class="site-footer">
   
@@ -121,6 +221,8 @@
     
   
 </script>
+
+  
 
 </body>
 

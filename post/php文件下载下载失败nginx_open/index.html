@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Tius" />
-  <meta property="og:url" content="http://sztone.github.io/tags/" />
-  <link rel="canonical" href="http://sztone.github.io/tags/" /><link rel="alternate" type="application/atom+xml" href="http://sztone.github.io/index.xml" title="Tius&#39;s Blog">
+  <meta property="og:url" content="http://sztone.github.io/post/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open/" />
+  <link rel="canonical" href="http://sztone.github.io/post/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open/" /><link rel="alternate" type="application/atom+xml" href="http://sztone.github.io/index.xml" title="Tius&#39;s Blog">
 
   <script type="application/ld+json">
   {
@@ -18,28 +18,32 @@
            "@type": "WebPage",
            "@id": "http:\/\/sztone.github.io\/"
       },
-      "articleSection" : "tags",
-      "name" : "Tags",
-      "headline" : "Tags",
-      "description" : "",
+      "articleSection" : "post",
+      "name" : "PHP文件下载，下载失败，Nginx open() nginx\/fastcgi_temp\/2\/10\/0000000102“ failed (13: Permission denied)",
+      "headline" : "PHP文件下载，下载失败，Nginx open() nginx\/fastcgi_temp\/2\/10\/0000000102“ failed (13: Permission denied)",
+      "description" : "概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() \u0026quot;\/home\/server\/nginx\/fastcgi_temp\/2\/10\/0000000102\u0026quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录\/home\/server\/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名\nps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process \/home\/server\/nginx\/sbin\/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts\/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www\nchown -R www:www fastcgi_temp\/ ",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
       "publisher": "Tius",
       "accountablePerson" : "Tius",
       "copyrightHolder" : "Tius",
-      "copyrightYear" : "0001",
-      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
-      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "http:\/\/sztone.github.io\/tags\/",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-07-19 16:04:30 \u002b0800 CST",
+      "dateModified" : "2021-07-19 16:04:30 \u002b0800 CST",
+      "url" : "http:\/\/sztone.github.io\/post\/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open\/",
       "keywords" : [  ]
   }
 </script>
-<title>Tags</title>
-  <meta property="og:title" content="Tags" />
+<title>PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)</title>
+  <meta property="og:title" content="PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="" />
-  <meta name="description" content="" />
+  <meta property="og:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
+ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
+chown -R www:www fastcgi_temp/ " />
+  <meta name="description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
+ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
+chown -R www:www fastcgi_temp/ " />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
   
 
@@ -61,18 +65,21 @@
   
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)"/>
+<meta name="twitter:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
+ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
+chown -R www:www fastcgi_temp/ "/>
 
   
 </head>
 
 
 <body>
-  <article class="posts">
+  <article class="post " id="article">
     <div class="row">
       <div class="col-xs-12">
-        
+        <div class="site-header">
+          
 <header>
   <div class="header-title">
     <a href="/"
@@ -97,11 +104,79 @@
 </div>
 <div class="header-line"></div>
 
-
-        <h1 class="taxonomy-term"></h1>
-        <div id="posts-list">
-          
         </div>
+        <header class="post-header">
+          <h1 class="post-title">PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-07-19 16:04:30 CST">
+                19 Jul 2021
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://tius.cn/">@Tius</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h3 id="概述">概述</h3>
+<p>在测试服测试项目时出现文件下载失败
+<img src="/img/20210719134342410.png" alt="PHP文件下载失败"></p>
+<h3 id="排查问题">排查问题</h3>
+<p>经过排查发现<code>Nginx</code>给出报错信息
+<code>open() &quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&quot; failed (13: Permission denied) while reading upstream</code>
+<code>Nginx</code>提示我们没有权限操作
+<img src="/img/20210719134941588.png" alt="Nginx错误日志">
+然后我们进入目录<code>/home/server/nginx</code>检查<code>fastcgi_temp</code>文件所有者，我们的是<code>root组的root</code>用户
+<img src="/img/20210719135415793.png" alt="fastcgii所属者">
+我们再检查<code>Nginx worker</code>的用户组及用户名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ps -ef | grep nginx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 我们可以看到nginx的worker进程是www用户</span>
+</span></span><span style="display:flex;"><span>root       <span style="color:#ae81ff">80246</span>       <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> 10:37 ?        00:00:00 nginx: master process /home/server/nginx/sbin/nginx
+</span></span><span style="display:flex;"><span>www        <span style="color:#ae81ff">80247</span>   <span style="color:#ae81ff">80246</span>  <span style="color:#ae81ff">0</span> 10:37 ?        00:00:00 nginx: worker process
+</span></span><span style="display:flex;"><span>root       <span style="color:#ae81ff">82877</span>   <span style="color:#ae81ff">82840</span>  <span style="color:#ae81ff">0</span> 13:56 pts/7    00:00:00 grep --color<span style="color:#f92672">=</span>auto nginx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看www用户所在的组,以及组内成员</span>
+</span></span><span style="display:flex;"><span>groups www
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#我们的是www用户组的www用户</span>
+</span></span><span style="display:flex;"><span>www:www
+</span></span></code></pre></div><h3 id="解决问题">解决问题</h3>
+<p>我们在执行下载时，<code>nginx worker</code> 进程在给<code>fastcgi_temp</code>写入缓存时没有权限
+因此，我们只需要给<code>fastcgi_temp</code>目录修改权限为<code>nginx</code>的启动用户<code>www:www</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chown -R www:www fastcgi_temp/
+</span></span></code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              <br/><br/><p>Author：<a target='_blank' href='https://tius.cn'>Tius's Blog</a></p>
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
 
         <div class="site-footer">
   
@@ -121,6 +196,8 @@
     
   
 </script>
+
+  
 
 </body>
 
