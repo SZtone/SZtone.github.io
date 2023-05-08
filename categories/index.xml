@@ -2,9 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tius&#39;s Blog</title>
-    <link>http://coderzh.github.io/categories/</link>
+    <link>http://sztone.github.io/categories/</link>
     <description>Recent content in Categories on Tius&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://coderzh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 May 2023 10:55:54 +0800</lastBuildDate><atom:link href="http://sztone.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>goland</title>
+      <link>http://sztone.github.io/categories/goland/</link>
+      <pubDate>Mon, 08 May 2023 10:55:54 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/categories/goland/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://sztone.github.io/categories/test/</link>
+      <pubDate>Mon, 08 May 2023 10:55:54 +0800</pubDate>
+      
+      <guid>http://sztone.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tius&#39;s Blog</title>
-    <link>http://sztone.github.io/</link>
-    <description>Recent content on Tius&#39;s Blog</description>
+    <title>goland on Tius&#39;s Blog</title>
+    <link>http://sztone.github.io/categories/goland/</link>
+    <description>Recent content in goland on Tius&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 10:55:54 +0800</lastBuildDate><atom:link href="http://sztone.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>First</title>
-      <link>http://sztone.github.io/post/first/</link>
-      <pubDate>Mon, 08 May 2023 10:55:54 +0800</pubDate>
-      
-      <guid>http://sztone.github.io/post/first/</guid>
-      <description>sdfgsdf</description>
-    </item>
-    
+    <lastBuildDate>Mon, 08 May 2023 10:55:54 +0800</lastBuildDate><atom:link href="http://sztone.github.io/categories/goland/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Excel导出工具封装</title>
       <link>http://sztone.github.io/post/go-excel%E5%AF%BC%E5%87%BA%E5%B7%A5%E5%85%B7%E5%B0%81%E8%A3%85/</link>
