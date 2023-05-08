@@ -21,7 +21,7 @@
       "articleSection" : "post",
       "name" : "Nginx-Mysql 502 recv() failed 104: Connection reset by peer",
       "headline" : "Nginx-Mysql 502 recv() failed 104: Connection reset by peer",
-      "description" : "概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx \u0026amp; php-fpm 然后又继续排查Nginx日志， 发现Nginx 和 php-fpm通讯出现了问题\nrecv() failed (104: Connection reset by peer) while reading response header from upstream 出现这种错误，通常都是php-fpm没能正常响应Nginx 导致php-fpm这种情况，要么程序执行超时，要么就是服务器进程内存泄露, 程序上，我也是测了又测的，程序执行时间都在配置的php.ini,php-fpm.conf的超时时间内，不存在那么久的超时，\n解决 修改php-fpm配置文件 我这里是直接用pm.max_requests = 500来处理 意思是，当一个 PHP-CGI 进程处理的请求数累积到 500 个后，自动重启该进程。\n如果pm.max_requests没有设置重启参数，默认为0不限制最大服务次数，也就是子进程永远不重启，长时间不重启子进程会导致系统负载异常，处理时间变长等现象。\npm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 pm.max_spare_servers = 35 pm.max_requests = 500 有时候由于 php-fpm 有好多闲置的进程一直不释放， 导致内存占用过大，FastCGI 进程一旦加载就不会释放，当其工作完成后，就休眠于 FastCGI 系统池中，等待下一次被唤醒。甚至是php-fpm假死，也会出现502的错误，只能重启php-fpm才能解决这个问题。\n注： Nginx报错upstream timed out (110: Connection timed out) 就是由于pm.",
+      "description" : "概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx \u0026amp; php-fpm 然后又继续排查Ngin",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
@@ -32,25 +32,15 @@
       "datePublished": "2021-06-01 13:49:09 \u002b0800 CST",
       "dateModified" : "2021-06-01 13:49:09 \u002b0800 CST",
       "url" : "http:\/\/blog.tius.cn\/post\/nginx_mysql_connection_reset_by_peer\/",
-      "keywords" : [  ]
+      "keywords" : [ "Nginx","Mysql", ]
   }
 </script>
 <title>Nginx-Mysql 502 recv() failed 104: Connection reset by peer</title>
   <meta property="og:title" content="Nginx-Mysql 502 recv() failed 104: Connection reset by peer" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Nginx日志， 发现Nginx 和 php-fpm通讯出现了问题
-recv() failed (104: Connection reset by peer) while reading response header from upstream 出现这种错误，通常都是php-fpm没能正常响应Nginx 导致php-fpm这种情况，要么程序执行超时，要么就是服务器进程内存泄露, 程序上，我也是测了又测的，程序执行时间都在配置的php.ini,php-fpm.conf的超时时间内，不存在那么久的超时，
-解决 修改php-fpm配置文件 我这里是直接用pm.max_requests = 500来处理 意思是，当一个 PHP-CGI 进程处理的请求数累积到 500 个后，自动重启该进程。
-如果pm.max_requests没有设置重启参数，默认为0不限制最大服务次数，也就是子进程永远不重启，长时间不重启子进程会导致系统负载异常，处理时间变长等现象。
-pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 pm.max_spare_servers = 35 pm.max_requests = 500 有时候由于 php-fpm 有好多闲置的进程一直不释放， 导致内存占用过大，FastCGI 进程一旦加载就不会释放，当其工作完成后，就休眠于 FastCGI 系统池中，等待下一次被唤醒。甚至是php-fpm假死，也会出现502的错误，只能重启php-fpm才能解决这个问题。
-注： Nginx报错upstream timed out (110: Connection timed out) 就是由于pm." />
-  <meta name="description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Nginx日志， 发现Nginx 和 php-fpm通讯出现了问题
-recv() failed (104: Connection reset by peer) while reading response header from upstream 出现这种错误，通常都是php-fpm没能正常响应Nginx 导致php-fpm这种情况，要么程序执行超时，要么就是服务器进程内存泄露, 程序上，我也是测了又测的，程序执行时间都在配置的php.ini,php-fpm.conf的超时时间内，不存在那么久的超时，
-解决 修改php-fpm配置文件 我这里是直接用pm.max_requests = 500来处理 意思是，当一个 PHP-CGI 进程处理的请求数累积到 500 个后，自动重启该进程。
-如果pm.max_requests没有设置重启参数，默认为0不限制最大服务次数，也就是子进程永远不重启，长时间不重启子进程会导致系统负载异常，处理时间变长等现象。
-pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 pm.max_spare_servers = 35 pm.max_requests = 500 有时候由于 php-fpm 有好多闲置的进程一直不释放， 导致内存占用过大，FastCGI 进程一旦加载就不会释放，当其工作完成后，就休眠于 FastCGI 系统池中，等待下一次被唤醒。甚至是php-fpm假死，也会出现502的错误，只能重启php-fpm才能解决这个问题。
-注： Nginx报错upstream timed out (110: Connection timed out) 就是由于pm." />
-  <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
+  <meta property="og:description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Ngin" />
+  <meta name="description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Ngin" />
+  <meta property="og:locale" content="zh-cn" /><meta property="og:image" content="" />
   
 
   
@@ -72,12 +62,7 @@ pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx-Mysql 502 recv() failed 104: Connection reset by peer"/>
-<meta name="twitter:description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp; php-fpm 然后又继续排查Nginx日志， 发现Nginx 和 php-fpm通讯出现了问题
-recv() failed (104: Connection reset by peer) while reading response header from upstream 出现这种错误，通常都是php-fpm没能正常响应Nginx 导致php-fpm这种情况，要么程序执行超时，要么就是服务器进程内存泄露, 程序上，我也是测了又测的，程序执行时间都在配置的php.ini,php-fpm.conf的超时时间内，不存在那么久的超时，
-解决 修改php-fpm配置文件 我这里是直接用pm.max_requests = 500来处理 意思是，当一个 PHP-CGI 进程处理的请求数累积到 500 个后，自动重启该进程。
-如果pm.max_requests没有设置重启参数，默认为0不限制最大服务次数，也就是子进程永远不重启，长时间不重启子进程会导致系统负载异常，处理时间变长等现象。
-pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 pm.max_spare_servers = 35 pm.max_requests = 500 有时候由于 php-fpm 有好多闲置的进程一直不释放， 导致内存占用过大，FastCGI 进程一旦加载就不会释放，当其工作完成后，就休眠于 FastCGI 系统池中，等待下一次被唤醒。甚至是php-fpm假死，也会出现502的错误，只能重启php-fpm才能解决这个问题。
-注： Nginx报错upstream timed out (110: Connection timed out) 就是由于pm."/>
+<meta name="twitter:description" content="概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp; php-fpm 然后又继续排查Ngin"/>
 
   
 </head>
@@ -95,12 +80,12 @@ pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 
       >Tius Blog</a
     >
   </div>
-  <div class="header-subtitle"></div>
+  <div class="header-subtitle">这是一个纯粹的博客......</div>
 </header>
 <div class="row end-md center-xs header-items">
   
   <div class="header-item">
-    <a href="https://tius.cn" target="_blank">About Me</a>
+    <a href="" target="_blank">About Me</a>
   </div>
   
   <div class="header-item">
@@ -177,6 +162,18 @@ pm = dynamic pm.max_children = 35 pm.start_servers = 8 pm.min_spare_servers = 6 
 
         <div class="row middle-xs">
           <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/nginx/">
+                Nginx
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/mysql/">
+                Mysql
+              </a>
+            </div>
             
           </div>
         </div>

@@ -21,7 +21,7 @@
       "articleSection" : "post",
       "name" : "PHP文件下载，下载失败，Nginx open() nginx\/fastcgi_temp\/2\/10\/0000000102“ failed (13: Permission denied)",
       "headline" : "PHP文件下载，下载失败，Nginx open() nginx\/fastcgi_temp\/2\/10\/0000000102“ failed (13: Permission denied)",
-      "description" : "概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() \u0026quot;\/home\/server\/nginx\/fastcgi_temp\/2\/10\/0000000102\u0026quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录\/home\/server\/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名\nps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process \/home\/server\/nginx\/sbin\/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts\/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www\nchown -R www:www fastcgi_temp\/ ",
+      "description" : "概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() \u0026quot;\/home\/server\/nginx\/fastcgi_temp\/2\/10\/0000000102\u0026quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
@@ -38,13 +38,9 @@
 <title>PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)</title>
   <meta property="og:title" content="PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
-ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
-chown -R www:www fastcgi_temp/ " />
-  <meta name="description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
-ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
-chown -R www:www fastcgi_temp/ " />
-  <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
+  <meta property="og:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入" />
+  <meta name="description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &amp;quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&amp;quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入" />
+  <meta property="og:locale" content="zh-cn" /><meta property="og:image" content="" />
   
 
   
@@ -66,9 +62,7 @@ chown -R www:www fastcgi_temp/ " />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)"/>
-<meta name="twitter:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入目录/home/server/nginx检查fastcgi_temp文件所有者，我们的是root组的root用户 我们再检查Nginx worker的用户组及用户名
-ps -ef | grep nginx # 我们可以看到nginx的worker进程是www用户 root 80246 1 0 10:37 ? 00:00:00 nginx: master process /home/server/nginx/sbin/nginx www 80247 80246 0 10:37 ? 00:00:00 nginx: worker process root 82877 82840 0 13:56 pts/7 00:00:00 grep --color=auto nginx # 查看www用户所在的组,以及组内成员 groups www #我们的是www用户组的www用户 www:www 解决问题 我们在执行下载时，nginx worker 进程在给fastcgi_temp写入缓存时没有权限 因此，我们只需要给fastcgi_temp目录修改权限为nginx的启动用户www:www
-chown -R www:www fastcgi_temp/ "/>
+<meta name="twitter:description" content="概述 在测试服测试项目时出现文件下载失败 排查问题 经过排查发现Nginx给出报错信息 open() &quot;/home/server/nginx/fastcgi_temp/2/10/0000000102&quot; failed (13: Permission denied) while reading upstream Nginx提示我们没有权限操作 然后我们进入"/>
 
   
 </head>
@@ -86,12 +80,12 @@ chown -R www:www fastcgi_temp/ "/>
       >Tius Blog</a
     >
   </div>
-  <div class="header-subtitle"></div>
+  <div class="header-subtitle">这是一个纯粹的博客......</div>
 </header>
 <div class="row end-md center-xs header-items">
   
   <div class="header-item">
-    <a href="https://tius.cn" target="_blank">About Me</a>
+    <a href="" target="_blank">About Me</a>
   </div>
   
   <div class="header-item">

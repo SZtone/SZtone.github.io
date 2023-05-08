@@ -21,7 +21,7 @@
       "articleSection" : "post",
       "name" : "Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法",
       "headline" : "Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法",
-      "description" : "概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(\u0026quot;manage_tag\u0026quot;);,于是我在构造 __construct 内赋值给了变量db； 在我执行更新时，我会先去调用isRepeat()判断内容是否重复，于是就出现了下面的问题，\n问题 更新时，where条件多出name=\u0026quot;xxxx\u0026quot;;\npublic $db; public function __construct() { $this-\u0026gt;db = Db::name(\u0026#39;manage_tag\u0026#39;); } public function editTag(int $id,String $name) { $result = $this-\u0026gt;db-\u0026gt;where(\u0026#39;id\u0026#39;, $id)-\u0026gt;fetChSql()-\u0026gt;update([\u0026#39;name\u0026#39; =\u0026gt; $name]); var_dump($result); return $result ? true : false; } public function isRepeat(String $name) { $result = $this-\u0026gt;db-\u0026gt;where(\u0026#39;name\u0026#39;,$name)-\u0026gt;find(); return $result ? true : false; } 使用fetChSql()方法查看打印sql\nUPDATE `yh_manage_tag` `name` = \u0026#39;标签11321\u0026#39; , `update_time` = 1621046891 WHERE `name` = \u0026#39;标签11321\u0026#39; AND `id` = 1 解决 查阅Thinkphp5.",
+      "description" : "概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(\u0026quot;manage_t",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
@@ -32,21 +32,15 @@
       "datePublished": "2021-06-01 14:59:50 \u002b0800 CST",
       "dateModified" : "2021-06-01 14:59:50 \u002b0800 CST",
       "url" : "http:\/\/blog.tius.cn\/post\/thinkphp5.1%E5%A4%8D%E7%94%A8db%E7%B1%BB%E5%AF%BC%E8%87%B4sql_where%E6%9D%A1%E4%BB%B6%E5%8F%8Avalue%E5%80%BC%E6%B7%B7%E6%B7%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95\/",
-      "keywords" : [  ]
+      "keywords" : [ "PHP","thinkphp", ]
   }
 </script>
 <title>Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法</title>
   <meta property="og:title" content="Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_tag&amp;quot;);,于是我在构造 __construct 内赋值给了变量db； 在我执行更新时，我会先去调用isRepeat()判断内容是否重复，于是就出现了下面的问题，
-问题 更新时，where条件多出name=&amp;quot;xxxx&amp;quot;;
-public $db; public function __construct() { $this-&amp;gt;db = Db::name(&amp;#39;manage_tag&amp;#39;); } public function editTag(int $id,String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;id&amp;#39;, $id)-&amp;gt;fetChSql()-&amp;gt;update([&amp;#39;name&amp;#39; =&amp;gt; $name]); var_dump($result); return $result ? true : false; } public function isRepeat(String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;name&amp;#39;,$name)-&amp;gt;find(); return $result ? true : false; } 使用fetChSql()方法查看打印sql
-UPDATE `yh_manage_tag` `name` = &amp;#39;标签11321&amp;#39; , `update_time` = 1621046891 WHERE `name` = &amp;#39;标签11321&amp;#39; AND `id` = 1 解决 查阅Thinkphp5." />
-  <meta name="description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_tag&amp;quot;);,于是我在构造 __construct 内赋值给了变量db； 在我执行更新时，我会先去调用isRepeat()判断内容是否重复，于是就出现了下面的问题，
-问题 更新时，where条件多出name=&amp;quot;xxxx&amp;quot;;
-public $db; public function __construct() { $this-&amp;gt;db = Db::name(&amp;#39;manage_tag&amp;#39;); } public function editTag(int $id,String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;id&amp;#39;, $id)-&amp;gt;fetChSql()-&amp;gt;update([&amp;#39;name&amp;#39; =&amp;gt; $name]); var_dump($result); return $result ? true : false; } public function isRepeat(String $name) { $result = $this-&amp;gt;db-&amp;gt;where(&amp;#39;name&amp;#39;,$name)-&amp;gt;find(); return $result ? true : false; } 使用fetChSql()方法查看打印sql
-UPDATE `yh_manage_tag` `name` = &amp;#39;标签11321&amp;#39; , `update_time` = 1621046891 WHERE `name` = &amp;#39;标签11321&amp;#39; AND `id` = 1 解决 查阅Thinkphp5." />
-  <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
+  <meta property="og:description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_t" />
+  <meta name="description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_t" />
+  <meta property="og:locale" content="zh-cn" /><meta property="og:image" content="" />
   
 
   
@@ -68,10 +62,7 @@ UPDATE `yh_manage_tag` `name` = &amp;#39;标签11321&amp;#39; , `update_time` = 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法"/>
-<meta name="twitter:description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&quot;manage_tag&quot;);,于是我在构造 __construct 内赋值给了变量db； 在我执行更新时，我会先去调用isRepeat()判断内容是否重复，于是就出现了下面的问题，
-问题 更新时，where条件多出name=&quot;xxxx&quot;;
-public $db; public function __construct() { $this-&gt;db = Db::name(&#39;manage_tag&#39;); } public function editTag(int $id,String $name) { $result = $this-&gt;db-&gt;where(&#39;id&#39;, $id)-&gt;fetChSql()-&gt;update([&#39;name&#39; =&gt; $name]); var_dump($result); return $result ? true : false; } public function isRepeat(String $name) { $result = $this-&gt;db-&gt;where(&#39;name&#39;,$name)-&gt;find(); return $result ? true : false; } 使用fetChSql()方法查看打印sql
-UPDATE `yh_manage_tag` `name` = &#39;标签11321&#39; , `update_time` = 1621046891 WHERE `name` = &#39;标签11321&#39; AND `id` = 1 解决 查阅Thinkphp5."/>
+<meta name="twitter:description" content="概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&quot;manage_t"/>
 
   
 </head>
@@ -89,12 +80,12 @@ UPDATE `yh_manage_tag` `name` = &#39;标签11321&#39; , `update_time` = 16210468
       >Tius Blog</a
     >
   </div>
-  <div class="header-subtitle"></div>
+  <div class="header-subtitle">这是一个纯粹的博客......</div>
 </header>
 <div class="row end-md center-xs header-items">
   
   <div class="header-item">
-    <a href="https://tius.cn" target="_blank">About Me</a>
+    <a href="" target="_blank">About Me</a>
   </div>
   
   <div class="header-item">
@@ -177,6 +168,18 @@ UPDATE `yh_manage_tag` `name` = &#39;标签11321&#39; , `update_time` = 16210468
 
         <div class="row middle-xs">
           <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/php/">
+                PHP
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/thinkphp/">
+                thinkphp
+              </a>
+            </div>
             
           </div>
         </div>

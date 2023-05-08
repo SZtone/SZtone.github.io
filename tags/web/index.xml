@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Tius&#39;s Blog</title>
+    <link>http://blog.tius.cn/tags/web/</link>
+    <description>Recent content in Web on Tius&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 Apr 2019 13:21:46 +0800</lastBuildDate><atom:link href="http://blog.tius.cn/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jquery 根据 字符串首字符（string）生成Base64头像</title>
+      <link>http://blog.tius.cn/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</link>
+      <pubDate>Wed, 10 Apr 2019 13:21:46 +0800</pubDate>
+      
+      <guid>http://blog.tius.cn/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</guid>
+      <description>function getImage(name){ if($.trim(name) == &amp;#39;&amp;#39;){ name = &amp;#39;默认&amp;#39; } name = name.toUpperCase(); //设置初始值,防止name为空时程序无法执行 var nick = &amp;#34;未知&amp;#34;; //判断name</description>
+    </item>
+    
+  </channel>
+</rss>

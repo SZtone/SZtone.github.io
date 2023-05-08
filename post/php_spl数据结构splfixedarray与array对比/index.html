@@ -21,7 +21,7 @@
       "articleSection" : "post",
       "name" : "PHP SPL数据结构SplFixedArray与Array对比",
       "headline" : "PHP SPL数据结构SplFixedArray与Array对比",
-      "description" : "SplFixedArray 官方介绍：https:\/\/www.php.net\/manual\/zh\/class.splfixedarray.php\nSplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言\n使用示例： \/\/ 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i \u0026lt; 2000000; $i\u002b\u002b) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(\u0026#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($e-$s) \/ 1024 \/ 1024, $et - $st); \/\/ SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \\SplFixedArray(2000000); for ($i = 0; $i \u0026lt; 2000000; $i\u002b\u002b) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(\u0026#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($e-$s) \/ 1024 \/ 1024, $et - $st); echo \u0026#34;\u0026lt;hr\/\u0026gt;\u0026#34;; \/\/ 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(\u0026#39;普通数组， 遍历200万条数据耗时%f\u0026lt;br\/\u0026gt;\u0026#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(\u0026#39;SplFixedArray， 遍历200万条数据耗时%f\u0026lt;br\/\u0026gt;\u0026#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66.",
+      "description" : "SplFixedArray 官方介绍：https:\/\/www.php.net\/manual\/zh\/class.splfixedarray.php SplFixedArr",
       "inLanguage" : "en-US",
       "author" : "Tius",
       "creator" : "Tius",
@@ -38,13 +38,9 @@
 <title>PHP SPL数据结构SplFixedArray与Array对比</title>
   <meta property="og:title" content="PHP SPL数据结构SplFixedArray与Array对比" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
-SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
-使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &amp;#34;&amp;lt;hr/&amp;gt;&amp;#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&amp;#39;普通数组， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66." />
-  <meta name="description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
-SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
-使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &amp;lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &amp;#34;&amp;lt;hr/&amp;gt;&amp;#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&amp;#39;普通数组， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&amp;#39;SplFixedArray， 遍历200万条数据耗时%f&amp;lt;br/&amp;gt;&amp;#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66." />
-  <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
+  <meta property="og:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php SplFixedArr" />
+  <meta name="description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php SplFixedArr" />
+  <meta property="og:locale" content="zh-cn" /><meta property="og:image" content="" />
   
 
   
@@ -66,9 +62,7 @@ SplFixedArray提供索引数组的功能，它与普通数组的区别就是具�
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PHP SPL数据结构SplFixedArray与Array对比"/>
-<meta name="twitter:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php
-SplFixedArray提供索引数组的功能，它与普通数组的区别就是具有固定长度，且只能存放索引数组， 使用前必须先定义长度 好处就是在处理大数据的数组量， 速度更快， 占用内存更小，更接近c数组，但是因为还要存储php中的一些结构及gc回收等，内存利用远远不如c语言
-使用示例： // 普通数组 $s = memory_get_usage(); $st = microtime(true); $array = []; for ($i = 0; $i &lt; 2000000; $i&#43;&#43;) { $array[] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&#39;普通数组， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;, ($e-$s) / 1024 / 1024, $et - $st); // SplFixedArray $s = memory_get_usage(); $st = microtime(true); $fixedArray = new \SplFixedArray(2000000); for ($i = 0; $i &lt; 2000000; $i&#43;&#43;) { $fixedArray[$i] = $i; } $e = memory_get_usage(); $et = microtime(true); echo sprintf(&#39;SplFixedArray， 存储200万条数据占用%fMB内存, 耗时%f&lt;br/&gt;&#39;, ($e-$s) / 1024 / 1024, $et - $st); echo &#34;&lt;hr/&gt;&#34;; // 读取 $st = microtime(true); foreach ($array as $v) { } $et = microtime(true); echo sprintf(&#39;普通数组， 遍历200万条数据耗时%f&lt;br/&gt;&#39;, ($et-$st)); $st = microtime(true); foreach ($fixedArray as $v) { } $et = microtime(true); echo sprintf(&#39;SplFixedArray， 遍历200万条数据耗时%f&lt;br/&gt;&#39;,($et-$st)); 输出结果 普通数组， 存储200万条数据占用66."/>
+<meta name="twitter:description" content="SplFixedArray 官方介绍：https://www.php.net/manual/zh/class.splfixedarray.php SplFixedArr"/>
 
   
 </head>
@@ -86,12 +80,12 @@ SplFixedArray提供索引数组的功能，它与普通数组的区别就是具�
       >Tius Blog</a
     >
   </div>
-  <div class="header-subtitle"></div>
+  <div class="header-subtitle">这是一个纯粹的博客......</div>
 </header>
 <div class="row end-md center-xs header-items">
   
   <div class="header-item">
-    <a href="https://tius.cn" target="_blank">About Me</a>
+    <a href="" target="_blank">About Me</a>
   </div>
   
   <div class="header-item">

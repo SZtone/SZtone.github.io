@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Tius&#39;s Blog</title>
-    <link>http://blog.tius.cn/post/</link>
-    <description>Recent content in Posts on Tius&#39;s Blog</description>
+    <title>PHP on Tius&#39;s Blog</title>
+    <link>http://blog.tius.cn/categories/php/</link>
+    <description>Recent content in PHP on Tius&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Jul 2021 16:04:30 +0800</lastBuildDate><atom:link href="http://blog.tius.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 16:04:30 +0800</lastBuildDate><atom:link href="http://blog.tius.cn/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP文件下载，下载失败，Nginx open() nginx/fastcgi_temp/2/10/0000000102“ failed (13: Permission denied)</title>
       <link>http://blog.tius.cn/post/php%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5nginx_open/</link>
@@ -44,30 +44,12 @@
     </item>
     
     <item>
-      <title>Nginx-Mysql 502 recv() failed 104: Connection reset by peer</title>
-      <link>http://blog.tius.cn/post/nginx_mysql_connection_reset_by_peer/</link>
-      <pubDate>Tue, 01 Jun 2021 13:49:09 +0800</pubDate>
-      
-      <guid>http://blog.tius.cn/post/nginx_mysql_connection_reset_by_peer/</guid>
-      <description>概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Ngin</description>
-    </item>
-    
-    <item>
       <title>PHP Yaf(Yet Another Framework) 扩展及框架部署</title>
       <link>http://blog.tius.cn/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Sat, 10 Apr 2021 13:25:13 +0800</pubDate>
       
       <guid>http://blog.tius.cn/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</guid>
       <description>查看本机配置 终端输入命令php -v $ php -v PHP 7.4.3 (cli) (built: Feb 18 2020 17:29:57) ( NTS Visual C++ 2017 x64 ) Copyright (c) The PHP Group Zend Engine v3.4.0, Copyright (c) Zend Technologies 本机环境：windows10 PHPstudy PHP7.4.3 NTS + Nginx1.15 先附上链接</description>
-    </item>
-    
-    <item>
-      <title>Jquery 根据 字符串首字符（string）生成Base64头像</title>
-      <link>http://blog.tius.cn/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</link>
-      <pubDate>Wed, 10 Apr 2019 13:21:46 +0800</pubDate>
-      
-      <guid>http://blog.tius.cn/post/jquery%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F/</guid>
-      <description>function getImage(name){ if($.trim(name) == &amp;#39;&amp;#39;){ name = &amp;#39;默认&amp;#39; } name = name.toUpperCase(); //设置初始值,防止name为空时程序无法执行 var nick = &amp;#34;未知&amp;#34;; //判断name</description>
     </item>
     
   </channel>

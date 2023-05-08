@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on Tius&#39;s Blog</title>
+    <link>http://blog.tius.cn/tags/php/</link>
+    <description>Recent content in PHP on Tius&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Jul 2021 11:02:32 +0800</lastBuildDate><atom:link href="http://blog.tius.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows10 docker安装PHP环境swoole扩展</title>
+      <link>http://blog.tius.cn/post/windows10_docker%E5%AE%89%E8%A3%85php%E7%8E%AF%E5%A2%83swoole%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 07 Jul 2021 11:02:32 +0800</pubDate>
+      
+      <guid>http://blog.tius.cn/post/windows10_docker%E5%AE%89%E8%A3%85php%E7%8E%AF%E5%A2%83swoole%E6%89%A9%E5%B1%95/</guid>
+      <description>概述 本教程安装版本 php7.4 swoole4.6.4 步骤： 安装php镜像 创建php容器 安装gcc g++编译环境 安装swoole扩展 配置php.ini 重启容器 docker 安装PHP #</description>
+    </item>
+    
+    <item>
+      <title>Thinkphp5.1 复用Db类，导致sql where条件及Value值混淆的解决办法</title>
+      <link>http://blog.tius.cn/post/thinkphp5.1%E5%A4%8D%E7%94%A8db%E7%B1%BB%E5%AF%BC%E8%87%B4sql_where%E6%9D%A1%E4%BB%B6%E5%8F%8Avalue%E5%80%BC%E6%B7%B7%E6%B7%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Tue, 01 Jun 2021 14:59:50 +0800</pubDate>
+      
+      <guid>http://blog.tius.cn/post/thinkphp5.1%E5%A4%8D%E7%94%A8db%E7%B1%BB%E5%AF%BC%E8%87%B4sql_where%E6%9D%A1%E4%BB%B6%E5%8F%8Avalue%E5%80%BC%E6%B7%B7%E6%B7%86%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_t</description>
+    </item>
+    
+  </channel>
+</rss>

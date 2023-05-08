@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Tius&#39;s Blog</title>
+    <link>http://blog.tius.cn/tags/mysql/</link>
+    <description>Recent content in Mysql on Tius&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 01 Jun 2021 13:49:09 +0800</lastBuildDate><atom:link href="http://blog.tius.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx-Mysql 502 recv() failed 104: Connection reset by peer</title>
+      <link>http://blog.tius.cn/post/nginx_mysql_connection_reset_by_peer/</link>
+      <pubDate>Tue, 01 Jun 2021 13:49:09 +0800</pubDate>
+      
+      <guid>http://blog.tius.cn/post/nginx_mysql_connection_reset_by_peer/</guid>
+      <description>概述 昨日项目基本完工，然后走测试服测试项目时，接口返回，连接异常关闭，排错发现，我的Mysql服务502了， 排错 Nginx &amp;amp; php-fpm 然后又继续排查Ngin</description>
+    </item>
+    
+  </channel>
+</rss>
