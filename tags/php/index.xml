@@ -25,5 +25,14 @@
       <description>概述 用Thinkphp5.1开发项目时，Model层用了tp封装的Db类，因为不想每个方法都写db::name(&amp;quot;manage_t</description>
     </item>
     
+    <item>
+      <title>PHP Yaf(Yet Another Framework) 扩展及框架部署</title>
+      <link>http://blog.tius.cn/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 10 Apr 2021 13:25:13 +0800</pubDate>
+      
+      <guid>http://blog.tius.cn/post/phpyaf%E6%89%A9%E5%B1%95%E5%8F%8A%E6%A1%86%E6%9E%B6%E9%83%A8%E7%BD%B2/</guid>
+      <description>查看本机配置 终端输入命令php -v $ php -v PHP 7.4.3 (cli) (built: Feb 18 2020 17:29:57) ( NTS Visual C++ 2017 x64 ) Copyright (c) The PHP Group Zend Engine v3.4.0, Copyright (c) Zend Technologies 本机环境：windows10 PHPstudy PHP7.4.3 NTS + Nginx1.15 先附上链接</description>
+    </item>
+    
   </channel>
 </rss>
